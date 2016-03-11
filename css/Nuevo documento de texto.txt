@@ -1,0 +1,31 @@
+& siempre reemplaza al selector padre ejem;:
+a {
+    font-weight: bold;
+    &:hover { color: red; }
+  }
+a {
+    font-weight: bold;
+    &:hover { color: red; }
+  }
+  .funky {
+  font: {
+    family: fantasy;
+    size: 30em;
+    weight: bold;
+  }
+}
+@mixin nombremixin ($size, $color, $margen) {
+    font-size: $size;
+    color: $color;
+    border: 1px solid $color;
+    margin: $size;
+}
+ 
+// Llamamos el Mixin y personalizamos los diferentes valores
+#caja {
+    @include nombremixin (1em, #666, .5em);
+}
+#caja2 {
+    @include nombremixin (1.5em, #ff0000, .9em);
+}
+@include transform (translate3d(110px, 100px, 120px));

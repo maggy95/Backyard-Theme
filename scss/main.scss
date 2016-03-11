@@ -1,0 +1,169 @@
+
+$family: 'Lato', sans-serif;
+[class*="col-"] {
+	padding: 0; 
+}
+h1, h2, h3, h4, h5, p, hr{
+	margin: 0;
+	padding: 0;
+}
+@mixin date ($tamaño, $margen, $cnt) {
+	width: $tamaño;
+    margin: $margen;
+    text-align: $cnt;
+}
+@mixin date1 ( $margen, $cnt) {
+    margin: $margen;
+    text-align: $cnt;
+}
+@mixin date2 ($borde,$color,$radius,$padding,$background, $margen, $cnt) {
+	border: 0.5px solid $color;
+	border-radius: $radius;
+	padding: $padding;
+	color: $color;
+	background:$background; 
+    margin: $margen;
+    text-align: $cnt;
+}
+@mixin date3 ($borde,$color,$radius,$padding,$background, $margen, $cnt) {
+	border: 0.5px solid $background;
+	border-radius: $radius;
+	padding: $padding;
+	color: $color;
+	background:$background; 
+    margin: $margen;
+    text-align: $cnt;
+}
+body{
+	font-family:$family;
+}
+.navbar{
+	padding: 0;
+	margin: 0;
+	.navbar-brand{
+		padding: 0;
+		margin: 0;
+	}
+	.logo{
+	width: 65%;
+	}	
+}
+
+.background{
+	background-image: url(../images/1920x665-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color:#FFFFFF;
+	font: {
+    		family:$family;
+  		}
+	.capa{
+		background-color: rgba(0,0,0,0.5);
+	}
+	.date{
+		padding: 20% 52% 15% 6%;	
+		h1{
+			font-weight: 100;
+		}
+		p{
+			color: #E7E8EA;
+    		padding-top: 1%;
+    		margin-bottom: 4%;
+		}
+		button{
+			@include date3 (0.5px solid ,white,20px, 2% 4% 2% 4%, #3CB1F6, auto, center);
+			font: {
+    			size:12px;
+    			weight: bold;
+
+  			}
+  			margin-bottom: 4%;
+  			&:hover {@include date3 (0.5px solid ,#3CB1F6,20px, 2% 4% 2% 4%,none, auto, center);}
+		}
+		.iconos{
+				a{
+					text-decoration: none;
+					color: white;
+				}
+		}
+	}
+}
+//section
+.cell-phone{
+	padding-top: 10%;
+	padding-bottom: 5%;
+	img{
+		@include date (100%,auto,center);
+	}
+	.optimize{
+		padding-left: 2%;
+		width: 41%;
+		font-size: 13px;
+		h2,p {
+			padding-bottom: 5%;
+
+			strong{
+				color: #3CB1F6;
+			}
+		}
+		button {
+			@include date2 (0.5px solid ,#3CB1F6,20px, 2% 4% 2% 4%,white, auto, center);
+			font-weight: bold;
+		}
+	}
+}
+//section
+.ideas{
+	background-color:#F6F6F6;
+	.tipo{
+		
+		width: 85%;
+		margin: auto; 
+		.recreate{
+			padding-top: 10%;
+			padding-bottom: 10%;
+			@include date1 (auto,center);
+		}
+		.type{
+			@include date (95%,auto,left);
+			img{
+				@include date (95%,auto,center);
+				    padding-top: 7%;
+			}
+			.clases{
+				padding-left: 5%;
+				h4{
+					padding-bottom:4%; 
+				}
+				p{
+					width: 80%;
+					padding-bottom: 5%;
+				}
+			}
+			.c1{
+				padding-bottom: 10%;
+			}
+		}
+	}
+}
+footer{
+	padding: 3%;
+	.icn{
+		padding-left:45%; 
+		.social{
+			@include date2 (1px solid ,#3CB1F6,50%, 1%, white, auto, center);
+		}
+		.fa-google-plus{
+			    padding-right: 0.2%;
+    			padding-left: 0.5%;
+		}
+	}
+	p{
+		padding-top: 3%;
+		@include date1 (auto,center);
+	}
+	a{
+		color: #3CB1F6;
+	}
+}
